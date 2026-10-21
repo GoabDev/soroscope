@@ -151,7 +151,7 @@ export function estimateFees(
   resourceCostStroops: number,
   feeStats?: FeeStatsResponse | null,
 ): FeeEstimate {
-  const baseClassicFee = feeStats?.min_ledger_fee ?? 100;
+  const baseClassicFee = feeStats?.min_ledger_fee || 100;
   const surge = feeStats?.surge_multiplier ?? 1;
   const sorobanRate = feeStats?.soroban_fee_rate ?? 1;
 
